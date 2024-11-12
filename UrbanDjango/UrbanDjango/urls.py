@@ -19,14 +19,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path
-from task2.views import func_view
-from task2.views import ClassView
+from task3 import views
+
 
 from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', func_view ),
-    path('class/', ClassView.as_view())
+    path('', views.home, name='home'),
+    path('shop/', views.get_shop, name='shop'),
+    path('basket/', views.get_basket, name='basket'),
+
 
 ]
